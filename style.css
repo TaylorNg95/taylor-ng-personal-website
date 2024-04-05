@@ -1,3 +1,36 @@
 body {
-    background: rgb(230, 230, 236);
+    background: #CAE4DB;
+}
+
+#lastName h1, #lastName + h2 {
+    color: #00303F;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+#lastName h1 {
+    font-size: 12em;
+}
+
+#lastName + h2 {
+    font-size: 2.5em;
+    font-style: italic;
+}
+
+#explore {
+    color: #00303F;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 10%;
+    text-align: center;
+    border: solid 2px #00303F;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: auto;
+    margin-top: 5%
+}
+
+#explore:hover {
+    background-color: #7A9D96;
+    color: #FFFFFF;
 }

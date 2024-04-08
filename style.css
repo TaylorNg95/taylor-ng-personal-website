@@ -2,32 +2,77 @@ body {
     background: #CAE4DB;
 }
 
-#lastName h1, #lastName + h2 {
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden; /* delete?? */
+}
+
+.anim-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.animated-letter-in {
+    font-size: 16em;
+    margin: 0 10px;
+    opacity: 0; /* Start with the letters invisible */
+    animation: dropLetter 2s forwards; /* Apply the animation */
+}
+
+.animated-letter-out {
+    font-size: 16em;
+    margin: 0 10px;
+    opacity: 0; /* Start with the letters invisible */
+    animation: reverseDropLetter 2s forwards; /* Apply the reverse animation */
+}
+
+#title, #explore, .animated-letter-in, .animated-letter-out {
     color: #00303F;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    margin: 0;
 }
 
-#lastName h1 {
-    font-size: 12em;
+@keyframes dropLetter {
+    0% {
+      transform: translateY(-100px); /* Initial position above the container */
+      opacity: 0; /* Invisible */
+    }
+    100% {
+      transform: translateY(0); /* Final position at the top of the container */
+      opacity: 1; /* Visible */
+    }
+  }
+
+@keyframes reverseDropLetter {
+    0% {
+        transform: translateY(0); /* Initial position at the top of the container */
+        opacity: 1; /* Visible */
+    }
+    100% {
+        transform: translateY(-100px); /* Final position above the container */
+        opacity: 0; /* Invisible */
+    }
 }
 
-#lastName + h2 {
+#title {
     font-size: 2.5em;
     font-style: italic;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 #explore {
-    color: #00303F;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
     width: 10%;
     text-align: center;
     border: solid 2px #00303F;
     border-radius: 1em;
     padding: 0.5em;
-    margin: auto;
-    margin-top: 5%
 }
 
 #explore:hover {

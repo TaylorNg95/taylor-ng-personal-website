@@ -1,6 +1,5 @@
 window.addEventListener('load', function(){
-    const title = document.querySelector('#title');
-    title.style.opacity = '1';
+    document.querySelector('#title').style.opacity = '1';
 })
 
 
@@ -14,4 +13,10 @@ exploreBtn.addEventListener('click', function(){
     Array.from(animLetters).forEach(letter => {
         letter.className = 'animated-letter-out';
     });
+    document.querySelector('#title').style.opacity = '0';
+    
+    const letterOut = document.querySelector('.animated-letter-out');
+    letterOut.addEventListener('animationend', function(){
+        window.location.href = './basicinfo.html';
+    })
 })

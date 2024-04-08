@@ -1,6 +1,42 @@
 body {
     background: #CAE4DB;
+    color: #00303F;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1%;
+    padding: 1%;
 }
+
+nav {
+    background-color: #CAE4DB;
+    border: solid #00303F 4px;
+    border-radius: 10px;
+  }
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-list li {
+    float: left;
+  }
+
+.nav-link {
+    display: block;
+    color: #00303F;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.nav-link:hover {
+    color: white;
+    cursor: pointer;
+  }
 
 .container {
     display: flex;
@@ -22,19 +58,14 @@ body {
     font-size: 16em;
     margin: 0 10px;
     opacity: 0; /* Start with the letters invisible */
-    animation: dropLetter 2s forwards; /* Apply the animation */
+    animation: dropLetter 1.5s forwards; /* Apply the animation */
 }
 
 .animated-letter-out {
     font-size: 16em;
     margin: 0 10px;
     opacity: 0; /* Start with the letters invisible */
-    animation: reverseDropLetter 2s forwards; /* Apply the reverse animation */
-}
-
-#title, #explore, .animated-letter-in, .animated-letter-out {
-    color: #00303F;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: reverseDropLetter 1.5s forwards; /* Apply the reverse animation */
 }
 
 @keyframes dropLetter {
@@ -63,19 +94,23 @@ body {
     font-size: 2.5em;
     font-style: italic;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 1.5s;
 }
 
 #explore {
+    color: #00303F;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1em;
     width: 10%;
     text-align: center;
     border: solid 2px #00303F;
     border-radius: 1em;
     padding: 0.5em;
+    
 }
 
 #explore:hover {
     background-color: #7A9D96;
     color: #FFFFFF;
+    cursor: pointer;
 }

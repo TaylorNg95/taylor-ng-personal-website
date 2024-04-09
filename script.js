@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
 
 const exploreBtn = document.querySelector('#explore');
 
-function alternateClasses(){
+/* function alternateClasses(){
     if(exploreBtn.classList.contains('highlighted')){
         exploreBtn.classList.remove('highlighted');
         exploreBtn.classList.add('unhighlighted');
@@ -20,15 +20,20 @@ function alternateClasses(){
     setTimeout(alternateClasses, 1000);
 }
 
-alternateClasses();
+alternateClasses(); */
 
 exploreBtn.addEventListener('click', function(){
+    document.querySelector('#zoomWindow').style.overflow = 'hidden';
+
+    const windowElement = document.querySelector('#zoomWindow');
+    windowElement.style.animation = 'zoom 1.5s';
+
     const animLetters = document.getElementsByClassName('animated-letter-in');
     Array.from(animLetters).forEach(letter => {
         if(letter.id === 'lastNameN'){letter.className = 'animated-letter-out-left';}
         else if(letter.id === 'lastNameG'){letter.className = 'animated-letter-out-right';}
     });
-    document.querySelector('#explore').style.opacity = '0';
+    this.style.visibility = 'hidden';
     document.querySelector('#title').classList.add('animated-title-down');
     
     const letterOut = document.querySelector('.animated-letter-out-left');

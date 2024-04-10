@@ -1,42 +1,29 @@
+// Fade in TITLE and EXPLORE button when landing page loads
+
 window.addEventListener('load', function(){
-    document.querySelector('#title').style.opacity = '1';
-    document.querySelector('#explore').style.opacity = '1';
+    document.querySelector('#title').classList.remove('hide');
+    document.querySelector('#explore').classList.remove('hide');
 })
 
-
-
-// event listener when user clicks 'explore'
+// Interactivity when user clicks EXPLORE button
 
 const exploreBtn = document.querySelector('#explore');
 
-/* function alternateClasses(){
-    if(exploreBtn.classList.contains('highlighted')){
-        exploreBtn.classList.remove('highlighted');
-        exploreBtn.classList.add('unhighlighted');
-    } else if(exploreBtn.classList.contains('unhighlighted')){
-        exploreBtn.classList.remove('unhighlighted');
-        exploreBtn.classList.add('highlighted');
-    }
-    setTimeout(alternateClasses, 1000);
-}
-
-alternateClasses(); */
-
 exploreBtn.addEventListener('click', function(){
-    document.querySelector('#zoomWindow').style.overflow = 'hidden';
-
     const windowElement = document.querySelector('#zoomWindow');
-    windowElement.style.animation = 'zoom 1.5s';
-
-    const animLetters = document.getElementsByClassName('animated-letter-in');
-    Array.from(animLetters).forEach(letter => {
-        if(letter.id === 'lastNameN'){letter.className = 'animated-letter-out-left';}
-        else if(letter.id === 'lastNameG'){letter.className = 'animated-letter-out-right';}
-    });
-    this.style.visibility = 'hidden';
-    document.querySelector('#title').classList.add('animated-title-down');
     
-    const letterOut = document.querySelector('.animated-letter-out-left');
+    windowElement.style.overflow = 'hidden';
+    windowElement.style.animation = 'zoomLandingPage 1.5s forwards';
+
+    document.querySelector('#lNameN').className = 'anim-letter-out-left';
+    document.querySelector('#lNameG').className = 'anim-letter-out-right';
+
+    this.style.visibility = 'hidden';
+    document.querySelector('#title').classList.add('anim-title-out-down');
+
+    // QUESTION: Is below the best way to redirect to the new page after the animation has finished??
+    
+    const letterOut = document.querySelector('.anim-letter-out-left');
     letterOut.addEventListener('animationend', function(){
         window.location.href = './basicinfo.html';
     })

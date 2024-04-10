@@ -4,16 +4,20 @@
     <title>My Personal Website</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body id="zoomWindow">
+<body id="indexBody">
     <div id="landing-container">
         <div id="ng-container">
             <h1 class="anim-letter-in" id="lNameN">N</h1>
             <h1 class="anim-letter-in" id="lNameG">G</h1>
         </div>
-        <h2 id="title" class="hide">Full-Stack Software Developer</h2>
-        <p style="height: 10%">Placeholder for down arrows</p> <!-- TBD: REPLACE W/ BLINKING DOWN ARROWS -->
-        <button id="explore" class="hide">Explore</button>
+        <h2 id="title" class="anim-show">Full-Stack Software Developer</h2>
+        <div class="arrow-container">
+            <div id="arrow1" class="arrow hide"></div>
+            <div id="arrow2" class="arrow hide"></div>
+            <div id="arrow3" class="arrow hide"></div>
+        </div>
+        <button id="explore" class="anim-show">Explore</button>
     </div>
-    <script src="./script.js"></script>
+    <script src="./js/index_script.js"></script>
 </body>
 </html>

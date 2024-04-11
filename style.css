@@ -275,3 +275,50 @@ main {
     flex: 1;
     padding: 1em;
 }
+
+
+
+
+/* STYLING FOR PORTFOLIO PAGE */
+
+.scroll-container {
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#sc-1 {
+    position: absolute;
+    width: 75%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    transition: transform 1s ease;
+}
+
+#sc-2 {
+    position: absolute;
+    width: 75%;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, 0);
+    transition: transform 1s ease;
+}
+
+#sc-3 {
+    position: absolute;
+    width: 75%;
+    top: 100%;
+    left: 0%;
+    transform: translate(0, 0);
+    transition: transform 1s ease;
+}
+  
+/* .scroll-tl-br {
+    transform: translate(-100%, -100%);
+}
+
+.scroll-tr-bl {
+    transform: translate(100%, -100%);
+} */

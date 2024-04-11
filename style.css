@@ -290,7 +290,7 @@ main {
 
 #sc-1 {
     position: absolute;
-    width: 75%;
+    width: 100%;
     top: 0;
     left: 0;
     transform: translate(0, 0);
@@ -299,7 +299,7 @@ main {
 
 #sc-2 {
     position: absolute;
-    width: 75%;
+    width: 100%;
     top: 50%;
     left: 100%;
     transform: translate(0, 0);
@@ -308,7 +308,7 @@ main {
 
 #sc-3 {
     position: absolute;
-    width: 75%;
+    width: 100%;
     top: 100%;
     left: 0%;
     transform: translate(0, 0);

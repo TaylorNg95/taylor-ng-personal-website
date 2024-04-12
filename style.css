@@ -247,13 +247,33 @@ nav {
 .scroll-content {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+#logo-flatiron {
+    width: 30%;
+    margin: 4% 0 2% 0;
+}
+
+#logo-wta {
+    width: 30%;
+    margin: 4% 0 2% 0;
+}
+
+#logo-evercore {
+    width: 30%;
+    margin: 4% 0 2% 0;
+}
+
+#logo-dart {
+    width: 15%;
+    margin: 4% 0 2% 0;
 }
 
 .scroll-content p {
     text-align: center;
     width: 80%;
-    margin: auto;
 }
 
 #sc-1 {

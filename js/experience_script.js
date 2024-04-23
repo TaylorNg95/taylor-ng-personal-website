@@ -1,38 +1,47 @@
+/* // THIS WAS THE PREVIOUS CODE IN ORDE TO SCROLL DIAGONALLY
+
 let currentPosition = {x: 0, y: 0};
 const contentDivs = document.querySelectorAll('.scroll-content');
 
-/* let down_right_valid = 1;
-let down_left_valid = 0;
-let up_right_valid = 0;
-let up_left_valid = 0; */
-
-document.querySelector('#scroll-dr').addEventListener('click', function(){
-        const positionChange = calcScrollPosition('down-right');
-        Array.from(contentDivs).forEach(item => {
-            item.style.transform = positionChange;
-        })
-})
-
-document.querySelector('#scroll-dl').addEventListener('click', function(){
-        const positionChange = calcScrollPosition('down-left');
-        Array.from(contentDivs).forEach(item => {
-            item.style.transform = positionChange;
-        })
-})
-
-document.querySelector('#scroll-ur').addEventListener('click', function(){
-        const positionChange = calcScrollPosition('up-right');
-        Array.from(contentDivs).forEach(item => {
-            item.style.transform = positionChange;
-        })
-})
-
-document.querySelector('#scroll-ul').addEventListener('click', function(){
-        const positionChange = calcScrollPosition('up-left');
-        Array.from(contentDivs).forEach(item => {
-            item.style.transform = positionChange;
-        })
+document.querySelector('#scroll-dr').addEventListener('click', function(event){
+    event.preventDefault();
+    const positionChange = calcScrollPosition('down-right');
+    Array.from(contentDivs).forEach(item => {
+        item.style.transform = positionChange;
     })
+    this.style.display = 'none';
+    document.querySelector('#scroll-ul').style.display = 'inline';
+    document.querySelector('#scroll-dl').style.display = 'inline';
+})
+
+document.querySelector('#scroll-ul').addEventListener('click', function(event){
+    event.preventDefault();
+    const positionChange = calcScrollPosition('up-left');
+    Array.from(contentDivs).forEach(item => {
+        item.style.transform = positionChange;
+    })
+    this.style.display = 'none';
+    document.querySelector('#scroll-dr').style.display = 'inline';
+})
+
+document.querySelector('#scroll-dl').addEventListener('click', function(event){
+    event.preventDefault();
+    const positionChange = calcScrollPosition('down-left');
+    Array.from(contentDivs).forEach(item => {
+        item.style.transform = positionChange;
+    })
+    this.style.display = 'none';
+    document.querySelector('#scroll-dr').style.display = 'inline';
+    document.querySelector('#scroll-ur').style.display = 'inline';
+})
+
+document.querySelector('#scroll-ur').addEventListener('click', function(event){
+    event.preventDefault();
+    const positionChange = calcScrollPosition('up-right');
+    Array.from(contentDivs).forEach(item => {
+        item.style.transform = positionChange;
+    })
+})
 
 document.querySelector('#scroll-top').addEventListener('click', function(){
     const positionChange = calcScrollPosition('top');
@@ -69,38 +78,35 @@ function calcScrollPosition(direction){
     return transformValue;
 }
 
-// NEED TO WORK ON THE FUNCTION BELOW IN ORDER TO PREVENT CERTAIN BUTTONS FROM TIGGERING WHEN NOT APPROPRIATE - I WOUDLD HAVE THE VARIABLES UP TOP AND TOGGLE ON SWITCHES AND USE IF STATEMENTS IN THE EVENT LISTENERS
+// how to prevent # from showing up when the back arrow is clicked? */
 
-/* function setButtonValidity(position) {
-    switch(position) {
-        case {x: 0, y: 0}:
-            down_right_valid = 1;
-            down_left_valid = 0;
-            up_right_valid = 0;
-            up_left_valid = 0;
-          break;
-        case {x: -100, y: -100}:
-            down_right_valid = 0;
-            down_left_valid = 1;
-            up_right_valid = 0;
-            up_left_valid = 1;
-          break;
-        case {x: 0, y: -200}:
-            down_right_valid = 1;
-            down_left_valid = 0;
-            up_right_valid = 1;
-            up_left_valid = 0;
-          break;
-        case {x: -100, y: -300}:
-            down_right_valid = 0;
-            down_left_valid = 0;
-            up_right_valid = 0;
-            up_left_valid = 1;
-          break;
-        default:
-            down_right_valid = 1;
-            down_left_valid = 0;
-            up_right_valid = 0;
-            up_left_valid = 0;
+function toggleScrollArrow(){
+    const arrow = document.querySelector('.sc-down');
+    arrow.classList.toggle('expanded');
+    setTimeout(toggleScrollArrow, 500);
+}
+
+toggleScrollArrow();
+
+let currentPosition = {x: 0, y: 0};
+const contentDivs = Array.from(document.querySelectorAll('.scroll-content'));
+contentDivs.pop();
+
+const scrollDownBtn = document.querySelector('#sc-down');
+scrollDownBtn.addEventListener('click', function(){
+    if(currentPosition.y > -300){
+        const positionChange = calcScrollPosition();
+        contentDivs.forEach(item => {
+            item.style.transform = positionChange;
+        })
+        scrollDownBtn.style.display = 'none';
+        setTimeout(function(){scrollDownBtn.style.display = '';}, 1000);
     }
-} */
+})
+
+function calcScrollPosition(){
+    let transformValue;
+    currentPosition.y -= 120;
+    transformValue = `translate(0, ${currentPosition.y}%)`;
+    return transformValue;
+}

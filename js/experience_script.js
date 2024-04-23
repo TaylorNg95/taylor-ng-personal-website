@@ -1,6 +1,6 @@
 // how to prevent # from showing up when the back arrow is clicked? */
 
-function toggleScrollArrow(){
+/* function toggleScrollArrow(){
     const arrow = document.querySelector('.sc-down');
     arrow.classList.toggle('expanded');
     setTimeout(toggleScrollArrow, 500);
@@ -27,4 +27,19 @@ function calcScrollPosition(){
     currentPosition.y -= 120;
     transformValue = `translate(0, ${currentPosition.y}%)`;
     return transformValue;
+} */
+
+
+/* const element = document.querySelector('.scroll-left-animation');
+const elementPosition = element.getBoundingClientRect().top;
+console.log(elementPosition);
+
+function checkPosition() {
+    const viewportHeight = window.innerHeight;
+    if (elementPosition - viewportHeight <= 0) {
+        element.classList.add('slide-in');
+        window.removeEventListener('scroll', checkPosition);
+    }
 }
+
+window.addEventListener('scroll', checkPosition); */

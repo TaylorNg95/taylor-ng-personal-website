@@ -41,6 +41,6 @@ exploreBtn.addEventListener('click', function(){
     
     const letterOut = document.querySelector('.anim-letter-out-left');
     letterOut.addEventListener('animationend', function(){
-        window.location.href = './basicinfo.html';
+        window.location.href = './experience.html';
     })
 })

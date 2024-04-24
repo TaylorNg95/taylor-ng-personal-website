@@ -10,14 +10,13 @@ nav {
     background-color: #CAE4DB;
     position: fixed;
     top: 0;
-    /* border: solid #00303F 4px;
-    border-radius: 10px; */
     width: 96%;
+    z-index: 999; /* NEED TO MAKE SURE I UNDERSTAND THIS */
   }
 
 .nav-list {
     list-style-type: none;
-    margin: 2% 0 3% 0;
+    margin: 2% 0 1% 0;
     padding: 0;
     overflow: hidden;
 }
@@ -243,6 +242,8 @@ nav {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 400vh;
+    overflow: hidden;
     justify-content: center;
     padding-top: 5%;
     align-items: center;
@@ -252,6 +253,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100%;
 }
@@ -268,9 +270,34 @@ nav {
     font-style: italic;
 }
 
+#exp-1 {
+    background-color: pink;
+}
+
+#exp-2 {
+    background-color: grey;
+    position: relative;
+    left: -100%;
+    transition: left 1s;
+}
+
+#exp-3 {
+    background-color: pink;
+    position: relative;
+    left: 100%;
+    transition: left 1s;
+}
+
+#exp-4 {
+    background-color: grey;
+    position: relative;
+    left: -100%;
+    transition: left 1s;
+}
+
 #logo-flatiron {
     width: 25%;
-    margin: 4% 0 2% 0;
+    margin: 0 0 2% 0;
 }
 
 #logo-wta {
@@ -284,7 +311,7 @@ nav {
 }
 
 #logo-dart {
-    width: 15%;
+    width: 10%;
     margin: 4% 0 2% 0;
 }
 
@@ -311,3 +338,11 @@ nav {
     border-radius: 5px;
     padding: 5px;
 }
+
+footer {
+    background-color: #CAE4DB;
+    position: fixed;
+    bottom: 0;
+    width: 96%;
+    z-index: 999; /* NEED TO MAKE SURE I UNDERSTAND THIS */
+  }

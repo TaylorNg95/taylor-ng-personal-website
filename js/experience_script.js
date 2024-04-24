@@ -43,3 +43,43 @@ function checkPosition() {
 }
 
 window.addEventListener('scroll', checkPosition); */
+
+/* function viewportTop(){
+    const topOfViewPort = window.scrollY;
+    console.log(topOfViewPort);
+}
+
+window.addEventListener('scroll', viewportTop);
+
+function getDivViewportTop(element){
+    const rect = element.getBoundingClientRect();
+    return rect.top + window.scrollY;
+} */
+
+const navHeight = document.querySelector('nav').offsetHeight;
+const footerHeight = document.querySelector('footer').offsetHeight;
+const scrollableAmount = document.documentElement.scrollHeight - window.innerHeight + footerHeight;
+const threshold1 = scrollableAmount / 3;
+const threshold2 = scrollableAmount * 2 / 3;
+
+console.log(scrollableAmount, threshold1, threshold2);
+
+window.addEventListener('scroll', function(){
+    const amountScrolled = window.scrollY;
+    if(amountScrolled < threshold1){
+        const unScrollPercent = (threshold1 - amountScrolled) / threshold1;
+        const offset = unScrollPercent * 100;
+        const exp2 = document.querySelector('#exp-2');
+        exp2.style.left = '-' + offset + '%';
+    } else if(amountScrolled >= threshold1 && amountScrolled < threshold2){
+        const unScrollPercent = (threshold2 - amountScrolled) / (threshold2 - threshold1);
+        const offset = unScrollPercent * 100;
+        const exp3 = document.querySelector('#exp-3');
+        exp3.style.left = offset + '%';
+    } else if(amountScrolled >= threshold2){
+        const unScrollPercent = (scrollableAmount - amountScrolled) / (threshold2 - threshold1);
+        const offset = unScrollPercent * 100;
+        const exp4 = document.querySelector('#exp-4');
+        exp4.style.left = '-' + offset + '%';
+    }
+})

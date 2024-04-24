@@ -26,7 +26,7 @@ exploreBtn.addEventListener('click', function(){
         arrow.classList.add('hide');
     })
 
-    const windowElement = document.querySelector('#indexBody');
+    const windowElement = document.querySelector('#index-body');
     
     windowElement.style.overflow = 'hidden';
     windowElement.style.animation = 'zoomOutLandingPage 1.5s forwards';

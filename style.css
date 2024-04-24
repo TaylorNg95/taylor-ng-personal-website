@@ -6,6 +6,21 @@ body {
     padding: 1%;
 }
 
+#index-body {
+    /* background-image: url('https://cdn.static-economist.com/sites/default/files/images/2015/09/blogs/economist-explains/code2.png');
+ */    background-size: cover;
+    background-attachment: fixed;
+    animation: scrollBackground 20s linear infinite;
+}
+
+@keyframes scrollBackground {
+    0%, 100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 100%;
+    }
+}
 
 nav {
     background-color: #CAE4DB;
@@ -39,6 +54,10 @@ nav {
 .nav-link:hover {
     color: white;
     cursor: pointer;
+}
+
+.active-link {
+    color: white;
 }
 
 

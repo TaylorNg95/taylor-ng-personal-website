@@ -58,11 +58,11 @@ function getDivViewportTop(element){
 
 const navHeight = document.querySelector('nav').offsetHeight;
 const footerHeight = document.querySelector('footer').offsetHeight;
-const scrollableAmount = document.documentElement.scrollHeight - window.innerHeight + footerHeight;
+const scrollableAmount = document.documentElement.scrollHeight - window.innerHeight - navHeight;
 const threshold1 = scrollableAmount / 3;
 const threshold2 = scrollableAmount * 2 / 3;
 
-console.log(scrollableAmount, threshold1, threshold2);
+const jumpUpButton = document.querySelector('#jump-to-top');
 
 window.addEventListener('scroll', function(){
     const amountScrolled = window.scrollY;
@@ -81,5 +81,20 @@ window.addEventListener('scroll', function(){
         const offset = unScrollPercent * 100;
         const exp4 = document.querySelector('#exp-4');
         exp4.style.left = '-' + offset + '%';
+        jumpUpButton.classList.toggle('hide');
     }
+
+/* 1.25 is used so that the 'Jump to Top' button only appears when Dartmouth is really shown */
+    if(amountScrolled >= (1.25 * threshold2)){
+        jumpUpButton.classList.remove('hide');
+    } else{
+        jumpUpButton.classList.add('hide');
+    }
+})
+
+jumpUpButton.addEventListener('click', function(){
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 })

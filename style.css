@@ -6,6 +6,7 @@ body {
     padding: 1%;
 }
 
+
 nav {
     background-color: #CAE4DB;
     position: fixed;
@@ -271,28 +272,29 @@ nav {
 }
 
 #exp-1 {
-    background-color: pink;
+    /* background-color: pink; */
+    justify-content: start;
 }
 
 #exp-2 {
-    background-color: grey;
+    /* background-color: grey; */
     position: relative;
     left: -100%;
-    transition: left 1s;
+    transition: left 0.75s;
 }
 
 #exp-3 {
-    background-color: pink;
+    /* background-color: pink; */
     position: relative;
     left: 100%;
-    transition: left 1s;
+    transition: left 0.75s;
 }
 
 #exp-4 {
-    background-color: grey;
+    /* background-color: grey; */
     position: relative;
     left: -100%;
-    transition: left 1s;
+    transition: left 0.75s;
 }
 
 #logo-flatiron {
@@ -340,9 +342,30 @@ nav {
 }
 
 footer {
+    display: flex;
     background-color: #CAE4DB;
     position: fixed;
     bottom: 0;
     width: 96%;
+    height: 7%;
+    line-height: 200%;
+    align-items: center;
+    justify-content: center;
     z-index: 999; /* NEED TO MAKE SURE I UNDERSTAND THIS */
+  }
+
+#jump-to-top {
+    background-color: #FFFFFF;
+    color: #00303F;
+    font-weight: bold;
+    border: solid 2px #00303F;
+    border-radius: 10px;
+    padding: .5em;
+    height: 75%;
+  }
+
+#jump-to-top:hover {
+    background-color: #7A9D96;
+    color: #FFFFFF;
+    cursor: pointer;
   }

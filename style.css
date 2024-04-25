@@ -24,14 +24,23 @@ nav {
   }
 
 .nav-list {
+    display: flex;
     list-style-type: none;
     margin: 2% 0 1% 0;
     padding: 0;
     overflow: hidden;
 }
 
-.nav-list li {
-    float: left;
+.nav-list li:nth-child(6) {
+    /* Style for the first five links */
+    flex: 1;
+    margin-right: 0; /* Grow to fill available space */
+  }
+  
+.nav-list li:nth-child(6) {
+    flex: 1; /* Grow to fill available space */
+    margin-left: 45%;
+    text-align: right; /* Align text to the right */
 }
 
 .nav-link {

@@ -58,7 +58,7 @@ function getDivViewportTop(element){
 
 const navHeight = document.querySelector('nav').offsetHeight;
 const footerHeight = document.querySelector('footer').offsetHeight;
-const scrollableAmount = document.documentElement.scrollHeight - window.innerHeight - navHeight;
+const scrollableAmount = document.documentElement.scrollHeight - window.innerHeight - navHeight - footerHeight;
 const threshold1 = scrollableAmount / 3;
 const threshold2 = scrollableAmount * 2 / 3;
 

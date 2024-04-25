@@ -6,21 +6,14 @@ body {
     padding: 1%;
 }
 
-#index-body {
-    /* background-image: url('https://cdn.static-economist.com/sites/default/files/images/2015/09/blogs/economist-explains/code2.png');
- */    background-size: cover;
-    background-attachment: fixed;
-    animation: scrollBackground 20s linear infinite;
-}
-
-@keyframes scrollBackground {
+/* @keyframes scrollBackground {
     0%, 100% {
         background-position: 0 0;
     }
     50% {
         background-position: 0 100%;
     }
-}
+} */
 
 nav {
     background-color: #CAE4DB;
@@ -52,12 +45,12 @@ nav {
 }
 
 .nav-link:hover {
-    color: white;
+    text-decoration: underline;
     cursor: pointer;
 }
 
 .active-link {
-    color: white;
+    text-decoration: underline;
 }
 
 
@@ -230,19 +223,9 @@ nav {
     }
 }
 
-/* ZOOM IN effect for Basic Info Page*/
-
-@keyframes zoomInBasicInfoPage {
-    0% {
-      transform: scale(0.75);
-    }
-    100% {
-      transform: scale(1);
-    }
-}
 
 
-/* STYLING FOR BASIC INFO PAGE */
+/* STYLING FOR ABOUT ME PAGE */
 
 @keyframes zoomBasicInfoPage {
     0% {
@@ -251,6 +234,64 @@ nav {
     100% {
       transform: scale(1);
     }
+}
+
+.about-images-container {
+    position: relative;
+    padding-top: 5%;
+    height: 30vh;
+    display: block;
+}
+
+.about-images-container img {
+    position: absolute;
+    width: 15%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.about-images-container img:nth-child(1) {
+    left: 20%;
+    top: 45%;
+    z-index: 1;
+    animation-delay: 0.2s;
+}
+
+.about-images-container img:nth-child(2) {
+    left: 30%; /* Adjust as needed */
+    top: 35%; /* Adjust as needed */
+    z-index: 2;
+    animation-delay: 0.4s;
+}
+
+.about-images-container img:nth-child(3) {
+    left: 40%; /* Adjust as needed */
+    top: 25%; /* Adjust as needed */
+    z-index: 3;
+    animation-delay: 0.6s;
+}
+
+.about-images-container img:nth-child(4) {
+    left: 50%; /* Adjust as needed */
+    top: 35%; /* Adjust as needed */
+    z-index: 2;
+    animation-delay: 0.8s;
+}
+
+.about-images-container img:nth-child(5) {
+    left: 60%; /* Adjust as needed */
+    top: 45%; /* Adjust as needed */
+    z-index: 1;
+    animation-delay: 1s;
 }
 
 

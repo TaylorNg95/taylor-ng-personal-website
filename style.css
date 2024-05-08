@@ -39,7 +39,7 @@ nav {
   
 .nav-list li:nth-child(6) {
     flex: 1; /* Grow to fill available space */
-    margin-left: 45%;
+    margin-left: 40%;
     text-align: right; /* Align text to the right */
 }
 
